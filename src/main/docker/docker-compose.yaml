@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+   mysql_cnt: 
+       image: mysql:5
+       networks:
+        - n1
+       environment:
+        - MYSQL_DATABASE=netgloo_blog
+        - MYSQL_ROOT_PASSWORD=root 
+       
+      
+   boot-hib_cnt:
+       image: boot-hib
+       networks: 
+        - n1 
+       ports:
+        - 80:8080        
+       depends_on:
+        - mysql_cnt 
+
+networks:
+   n1: 
+   
+
