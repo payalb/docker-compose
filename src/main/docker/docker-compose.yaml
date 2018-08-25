@@ -11,7 +11,7 @@ services:
        
       
    boot-hib_cnt:
-       image: boot-hib
+       image: payal1/boot-hib
        networks: 
         - n1 
        ports:
